@@ -1,3 +1,40 @@
-<div class="col-md-12">
-This is the book view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>AdTech Library</h1>
+    <p class="lead">AdTechSTUDIO Library Site</p>
+    <img src="https://www.cyberagent.co.jp/files/topics/9358_ext_01_0.jpg?b2a10c98d8358e86cc3c9cbde85bbdde" alt="adtechstudio">
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>本棚</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>タイトル</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr ng:repeat="book in books">
+          <td>{{book.title}}</td>
+          <td>{{book.description}}</td>
+          <td><button class="btn btn-primary">借りる</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+
+<footer class="footer">
+  <div class="container">
+    <p>AdTechLibrary</p>
+  </div>
+</footer>
+
