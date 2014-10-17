@@ -3,6 +3,22 @@
 var _ = require('lodash');
 var Book = require('./book.model');
 
+// init
+var init = function() {
+  Book.find({}).remove(function() {
+    Book.create({
+      title: 'perfect javascript',
+      description: 'perfect of javascript'
+    }, {
+      title: 'perfect php',
+      description: 'perfect of php'
+    }, function(err) {
+      console.log('finished perfect series');
+    });
+  });
+}
+init()
+
 // Get list of books
 exports.index = function(req, res) {
   Book.find(function (err, books) {
